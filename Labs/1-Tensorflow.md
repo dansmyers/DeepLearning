@@ -49,7 +49,7 @@ X is a virtual desktop that can run in a tab in your Codio environment. You can 
 
 Once the X Server install finishes, it will prompt you to go to the Project menu and reset your box. Do that.
 
-When you window restarts, go up to **second tab to the right of Help** at the top of your window. It will probably say either "Preview" or "Virtual Desktop". Click on the small arrow and go down to "Configure" on the menu. Verify that the JSON file that comes up looks like this:
+When your window restarts, go up to **second tab to the right of Help** at the top of your window. It will probably say either "Preview" or "Virtual Desktop". Click on the small arrow and go down to "Configure" on the menu. Verify that the JSON file that comes up looks like this:
 
 ```
 {
