@@ -41,6 +41,9 @@ $ conda install keras
 ## Setup GUI Output
 
 ### X Server
+
+**UPDATE: This didn't work well, so we've changed to saving our plots as PDFs. The rest of the lab has been updated.***
+
 Codio can display graphical output from Python programs, but you have to do a few extra steps to get it configured.
 
 Go to Tools --> Install Software and scroll down to X Server. Click the install icon to add it to your workspace.
@@ -81,6 +84,9 @@ Put this code in `test_plot.py`:
 # Example plot
 # CMS 495, Spring 2019
 
+import matplotlib
+matplotlib.use('Agg')  # Use to save output as PDF
+
 from matplotlib import pyplot as plt
 from math import sin, pi
 
@@ -97,8 +103,8 @@ plt.plot(x, y)
 plt.xlabel('x')
 plt.ylabel('sin(x)')
 
-# Use plt.show() to make the figure visible
-plt.show()
+# Save as PDF
+plt.savefig('test_plot.pdf', bbox_inches = 'tight')
 ```
 
 Run the program using
@@ -107,8 +113,7 @@ Run the program using
 $ python test_plot.py
 ```
 
-You might see a warning appear, but that's okay. To see the plot, click on the "Virtual Desktop" button in the top bar. That will bring
-up a new tab running your virtual X Server desktop. You should see a plot of the sine function.
+This will save the figure to a file named `test_plot.py`. The `bbox_inches` argument tells `matplotlib` to put the minimum amount of whitespace around the figure.
 
 
 ## Fashion Forward
@@ -166,14 +171,11 @@ for i in range(9):
     plt.grid(False)
     plt.imshow(train_images[i], cmap=plt.cm.binary)
     plt.xlabel(class_names[train_labels[i]])
-plt.show()
+plt.savefig('images.pdf', bbox_inches = 'tight')
 ```
 
 The code is straightforward. Notice that loading the dataset loads both a set of training images and their labels (this is the 60000 image set) and the separate test set (10000 images). The test labels are available to evaluate the quality of the model once it's been trained.
 
-When you run this program, it will take a moment to load the dataset, then print a warning message and pause. At that point, use your Preview button to open your X Server tab. You should see a maplotlib figure with a collection of example images.
-
-**This next detail is important**. When you are done looking at the examples, click the `X` button in the corner of the figure to close it. Matplotlib's `show` method blocks the program from progressing while it's displaying a figure, so you need to manually close the image to allow the program to move on.
 
 ### Training Montage
 
@@ -267,13 +269,14 @@ plt.subplot(1,2,1)
 plot_image(i, predictions, test_labels, test_images)
 plt.subplot(1,2,2)
 plot_value_array(i, predictions,  test_labels)
-plt.show()
+
+plt.savefig('training_image.pdf', bbox_inches = 'tight')
 
 
 # Plot the first X test images, their predicted label, and the true label
 # Color correct predictions in blue, incorrect predictions in red
-num_rows = 3
-num_cols = 2
+num_rows = 5
+num_cols = 5
 num_images = num_rows * num_cols
 plt.figure(figsize=(2 * 2 * num_cols, num_rows))
 for i in range(num_images):
@@ -282,7 +285,7 @@ for i in range(num_images):
   plt.subplot(num_rows, 2 * num_cols, 2*i + 2)
   plot_value_array(i, predictions, test_labels)
   
-plt.show()
+plt.savefig('test_results.pdf', bbox_inches = 'tight')
 ```
 
 ### Jam
