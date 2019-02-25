@@ -110,7 +110,8 @@ def train(w_hidden_1, w_hidden_2, w_output, x_input, target_label):
 
     # Forward-pass through the network
     
-    # Print some stuff about the classification
+    # Print results of the classification so we can see how the
+    # network is doing
     
     # Update output-layer weights
     
