@@ -76,7 +76,7 @@ else:
 
 ## Train
 
-We'll now train the network by hand using the backpropagation update rules. I'm not giving the update rules here, because they're hard to type.
+We'll now train the network by hand using the backpropagation update rules. I'm not repeating the update rules here, because they're hard to type, but we have them on the board.
 
 Iterate one point at a time. Use a **learning rate of .1**.
 
@@ -91,3 +91,59 @@ Iterate one point at a time. Use a **learning rate of .1**.
 Do one epoch, training over all four points in the logical-AND function, updating the weights after each point.
 
 After you update the weights, verify that they have moved in a direction that makes the classification **more correct**, even if the output has not crossed the threshold of .5 to actually change its predicted class.
+
+
+## Code
+
+Now, work with your team to implement the training algorithm in Python.
+
+**You only need to implement it for this one specific network and set of inputs**, so you can hardcode a lot of the structure.
+
+- You'll need a loop that runs a set number of training epochs, where each epoch is one pass through the data. 
+
+- I suggest representing the weights for each neuron as a list. For example: `w_hidden_1 = [0, 1, 1]`. The first weight is the bias.
+
+- You can then write a function that takes in the weights, input point, and its label and performs the entire training operation for that one point:
+
+```
+def train(w_hidden_1, w_hidden_2, w_output, x_input, target_label):
+
+    # Forward-pass through the network
+    
+    # Print some stuff about the classification
+    
+    # Update output-layer weights
+    
+    # Update hidden-layer weights at each hidden neuron
+    
+    # Return the updated weights
+    # You can return multiple things in Python!
+    return w_hidden_1, w_hidden_2, w_output
+    
+
+#--- Train one full epoch of the logical AND function
+def epoch(w_hidden_1, w_hidden_2, w_output):
+
+    # (0, 0)
+    w_hidden_1, w_hidden_2, w_output = train(w_hidden_1, w_hidden_2, w_output, [0, 0], 0)
+    
+    # Add cases for other AND function points
+    
+    
+#--- Main
+
+# Initialize weights
+w_hidden_1 = [0, 1, 1]
+w_hidden_2 = [0, 1, 1]
+w_output = [0, 1, 1]
+
+# Loop for a number of training epochs
+# You might need to adjust this number
+for epoch in range(10):
+    epoch(w_hidden_1, w_hidden_2, w_output)
+```
+
+
+## XOR
+
+When you have the code working and training the AND function, modify to train the XOR function.
