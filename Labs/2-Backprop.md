@@ -90,4 +90,4 @@ Iterate one point at a time. Use a **learning rate of .1**.
 
 Do one epoch, training over all four points in the logical-AND function, updating the weights after each point.
 
-After you update the weights, verify that they have moved in a direction that makes the classification **more correct**, even if they output has not crossed the threshold of .5 yet. If the point was misclas
+After you update the weights, verify that they have moved in a direction that makes the classification **more correct**, even if the output has not crossed the threshold of .5 to actually change its predicted class.
