@@ -12,7 +12,7 @@ conda install -c conda-forge deap
 
 onemax.py
 ---------
-Put the following code in a file named `onewmax.py`. Run it and verify that it generates a vector of all 1's.
+Put the following code in a file named `onemax.py`. Run it and verify that it generates a vector of all 1's.
 
 Look through the code and examine each section. Look at the DEAP toolbox functions and figure out what each one is doing.
 
