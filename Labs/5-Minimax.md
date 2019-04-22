@@ -27,10 +27,6 @@ Steps:
 
 5. Now increase the depth limit to 20. What happens?
 
-6. Modify your code to use alpha-beta pruning instead of the
-   basic minimax algorithm. Verify that this allows efficient
-   play even with higher depth limits.
-
 ## Code
 
 ```
