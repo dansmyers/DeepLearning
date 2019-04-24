@@ -3,7 +3,7 @@ The Subtraction Game
 
 Beginning with a pile of 21 stones, players alternate removing
 stones until none are left. On her turn, a player may take 1, 2,
-or 3 stones. The player who takes the last stone is the winner.
+or 3 stones. The player who takes the last stone is the loser.
 
 A version of this game was played on an episode of Survivor,
 where they called it Thai 21.
